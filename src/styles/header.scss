@@ -1,0 +1,37 @@
+.header-wrapper {
+  position: fixed;
+  display: flex;
+  height: 100px;
+  padding: 0 10%;
+  width: 100%;
+  align-items: center;
+}
+
+.header-on-scroll {
+  background: linear-gradient(45deg, #ff5f6d 0%, #ffc371 100%);
+  z-index: 9999;
+}
+
+.header-logo img {
+  width: 100px;
+  color: white;
+  cursor: pointer;
+}
+
+.header-options {
+  position: absolute;
+  margin-left: 58.5%;
+}
+
+.header-options a {
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.header-options a:hover {
+  text-decoration: underline;
+}
