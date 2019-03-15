@@ -48,8 +48,8 @@
         <br/> I <b>love</b> learning new things.
         <br/> I <b>love</b> keeping myself up-to-date with the software market.
         <br />I <b>love</b> feeling challenged by a complicated task to solve.
-        <br/><br/><span>More than just a developer, I consider myself an entrepeneur.</span>
       </p>
+      <span>More than just a developer, I consider myself an entrepeneur.</span>
     </div>
     <Footer />
   </div>
@@ -97,7 +97,7 @@ export default {
     overflow-x: hidden;
   }
   ::selection {
-    background: #EFC660; /* WebKit/Blink Browsers */
+    background: #ff5f6d;
     color: white;
   }
 </style>

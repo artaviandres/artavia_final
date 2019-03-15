@@ -97,18 +97,21 @@
       font-size: 24px;
       text-align: center;
       margin-bottom: 0;
+    }
 
-      span {
-        background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
-        padding: 0 5px;
-        color: white;
-      }
+    span {
+      background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
+      width: 800px !important;
+      padding: 0 5px;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     a {
-      background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ff5f6d;
       border-bottom: 1px black dashed;
       text-decoration: none;
       cursor: pointer;
