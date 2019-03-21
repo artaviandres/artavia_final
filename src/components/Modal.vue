@@ -2,7 +2,9 @@
   <transition name="modal">
     <div class="modal-mask">
       <div class="modal-container">
+        <a class="modal-close" @click="emitClose"><i class="fas fa-times"></i></a>
         <form>
+          <img src="../assets/logo.svg" />
           <Input placeholder="Jane Doe" width="width: 50%" title="Name" />
         </form>
       </div>
@@ -14,8 +16,10 @@
   import Input from './Input.vue';
   export default {
     name: 'Modal',
-    props: {
-      // label: String
+    methods: {
+      emitClose() {
+        this.$emit('closeModal');
+      },
     },
     components: {
       Input,
@@ -56,7 +60,18 @@
 
   .modal-container form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-container form img {
+    width: 120px;
+    margin: 30px 0;
+  }
+
+  .modal-close {
+    margin-left: 98%;
+    cursor: pointer;
   }
 
   .modal-enter {

@@ -1,23 +1,25 @@
 <template>
   <div id="footer-container">
-    <div class="social-container">
-      <a class="social-icon" href="mailto:artaviandres@gmail.com">
-        <i class="fas fa-envelope fa-2x"></i>
-      </a>
-      <a class="social-icon" href="https://www.facebook.com/artaviandres" target="_blank">
-        <i class="fab fa-facebook-f fa-2x"></i>
-      </a>
-      <a class="social-icon" href="https://twitter.com/Artvavia" target="_blank">
-        <i class="fab fa-twitter fa-2x"></i>
-      </a>
-      <a class="social-icon" href="https://www.linkedin.com/in/artaviandres/" target="_blank">
-        <i class="fab fa-linkedin-in fa-2x"></i>
-      </a>
-    </div>
-    <div class="personal-info">
-      <p>(+506) 6382-2481</p>
-      <p>artaviandres@gmail.com</p>
-      <p>San José, Costa Rica</p>
+    <div class="footer-info">
+      <div class="social-container">
+        <a class="social-icon" href="mailto:artaviandres@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a class="social-icon" href="https://www.facebook.com/artaviandres" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="social-icon" href="https://twitter.com/Artvavia" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="social-icon" href="https://www.linkedin.com/in/artaviandres/" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <div class="personal-info">
+        <p>(+506) 6382-2481</p>
+        <p>artaviandres@gmail.com</p>
+        <p>San José, Costa Rica</p>
+      </div>
     </div>
     <div class="copyright">
       <p>©2019. All rights reserved</p>
@@ -44,22 +46,38 @@ export default {
     height: 220px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+  }
+
+  .footer-info {
+    width: 60%;
+    display: flex;
+    align-items: center;
   }
 
   .social-container {
     display: flex;
-    margin-top: 25px;
+    justify-content: flex-start;
+    width: 50%;
+    padding-left: 50px;
   }
 
   .social-icon {
     cursor: pointer;
-    margin-right: 15px
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
+    text-decoration: none;
+    border-radius: 50%;
   }
   .social-icon i {
-    background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+    font-size: 1.5em;
   }
 
   .social-icon:nth-child(4) {
@@ -71,8 +89,9 @@ export default {
   }
 
   .personal-info {
-    text-align: center;
-    margin-top: 15px;
+    text-align: right;
+    padding-right: 50px;
+    width: 50%;
   }
 
   .personal-info p {

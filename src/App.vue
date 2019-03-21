@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <Header @openModal="toggleModal" :scrolled="scrolled" />
+    <Header @openModal="openModal" :scrolled="scrolled" />
     <div id="app">
       <h1 class="hello">Hello!</h1>
       <h1 class="im-andres"> I'm Andrés :)</h1>
       <p class="intro">I'm a Costa Rican based Web Developer, eager to work on new projects, and to develop new ideas!</p>
-      <Modal v-if="showModal" @close="showModal = false" />
+      <Modal v-if="showModal" @closeModal="closeModal" v-on:keyup.esc="closeModal" />
     </div>
     <div class="scroll">
         <p>SCROLL</p>
@@ -41,15 +41,20 @@
         <a href="https://www.mongodb.com/" target="_blank">Mongo</a>.
       </p>
     </div>
-    <div class="section">
-      <h1>About Andrés</h1>
-      <p>
-        I'm a 21 years old developer from Costa Rica, With more than 3 years of web development experience.
-        <br/> I <b>love</b> learning new things.
-        <br/> I <b>love</b> keeping myself up-to-date with the software market.
-        <br />I <b>love</b> feeling challenged by a complicated task to solve.
-      </p>
-      <span>More than just a developer, I consider myself an entrepeneur.</span>
+    <div class="special-section">
+      <div class="special-section-first">
+        <h1>About Andrés</h1>
+        <p>
+          I'm a 21 years old developer from Costa Rica.
+          <br />More than 3 years of web development experience.
+          <br/> I <b>love</b> learning new things.
+          <br/> I <b>love</b> keeping myself up-to-date with the software market.
+          <br />I <b>love</b> feeling challenged by a complicated task to solve.
+        </p>
+      </div>
+      <div class="special-section-second">
+        <h3>More than just a developer, an entrepeneur.</h3>
+      </div>
     </div>
     <Footer />
   </div>
@@ -70,8 +75,11 @@ export default {
     Header,
   },
   methods: {
-    toggleModal() {
+    openModal() {
       this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
     },
     handleScroll () {
       this.scrolled = window.scrollY > 0;
@@ -92,6 +100,7 @@ export default {
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,800');
   body {
     margin: 0;
     overflow-x: hidden;
