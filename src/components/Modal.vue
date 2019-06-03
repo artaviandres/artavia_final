@@ -3,9 +3,13 @@
     <div class="modal-mask">
       <div class="modal-container">
         <a class="modal-close" @click="emitClose"><i class="fas fa-times"></i></a>
-        <form>
+        <form v-on:submit.prevent="submitForm">
           <img src="../assets/logo.svg" />
-          <Input placeholder="Jane Doe" width="width: 50%" title="Name" />
+          <input v-model="from_name" />
+          <!-- <Input placeholder="Jane Doe" width="width: 70%" title="Enter Name" type="text" model="from_name" /> -->
+          <Input placeholder="janedoe@gmail.com" width="width: 70%" title="Enter Email" type="email" model="reply_to" />
+          <Input placeholder="this is a random message." width="width: 70%" title="Enter Message" type="text" model="message_html" />
+          <button>submit</button>
         </form>
       </div>
     </div>
@@ -16,10 +20,30 @@
   import Input from './Input.vue';
   export default {
     name: 'Modal',
+    data: () => ({
+      from_name: '',
+      reply_to: '',
+      message_html: '',
+    }),
+    created(){
+      emailjs.init("user_kCRwRozcLUM6fPoa7V0hs");
+    },
     methods: {
       emitClose() {
         this.$emit('closeModal');
       },
+      submitForm() {
+        let data = {
+          from_name: this.from_name,
+          reply_to: this.reply_to,
+          message_html: this.message_html
+        };
+        emailjs.send(
+          "default_service",
+          "andres_personal",
+          data,
+        );
+      }
     },
     components: {
       Input,

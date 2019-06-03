@@ -33,6 +33,10 @@
     </div>
     <div class="section gray-section">
       <h1>What technologies do I work on?</h1>
+      <!-- TODO: Progress bars!!! -->
+      <!-- <div class="progress-wrapper">
+        <ProgressBar name="React" progress="90%" />
+      </div> -->
       <p>I'm a Javascript enthusiast, and I <b>strongly</b> believe in high performance and optimal run times. This said, you'll often see me working with technologies such as
         <a href="https://reactjs.org/" target="_blank">React</a>,
         <a href="https://vuejs.org/" target="_blank">Vue</a>,
@@ -65,10 +69,12 @@ import Footer from './components/Footer.vue';
 import Modal from './components/Modal.vue';
 import Phase from './components/Phase.vue';
 import Header from './components/Header.vue';
+import ProgressBar from './components/ProgressBar.vue';
 
 export default {
   name: 'app',
   components: {
+    ProgressBar,
     Footer,
     Modal,
     Phase,

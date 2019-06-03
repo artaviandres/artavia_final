@@ -2,7 +2,7 @@
   <div class="form-input">
     <label class="form-input-title">{{ title }}</label>
     <div class="form-input-wrapper" :style="width">
-      <input :placeholder="placeholder" />
+      <input :placeholder="placeholder" :type="type" />
     </div>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
     placeholder: String,
     width: String,
     title: String,
+    type: String,
   },
 }
 </script>
